@@ -2,6 +2,8 @@ package org.simarro.adt6_practica2.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Hotel {
 
@@ -23,6 +25,7 @@ public class Hotel {
 
     @Column
     private String localidad;
+
 
     public Hotel(Integer id, String nombre, String descripcion, String categoria, Boolean piscina, String localidad) {
         this.id = id;

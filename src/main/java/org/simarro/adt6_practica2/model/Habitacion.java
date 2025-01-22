@@ -21,14 +21,19 @@ public class Habitacion {
     @Column
     private Boolean ocupada;
 
+    @ManyToOne
+    @JoinColumn(name = "id_hotel")
+    private Hotel hotel;
+
     public Habitacion(){}
 
-    public Habitacion(Integer id, Integer tamanio, Double precioXnoche, Boolean desayuno, Boolean ocupada) {
+    public Habitacion(Integer id, Integer tamanio, Double precioXnoche, Boolean desayuno, Boolean ocupada, Hotel hotel) {
         this.id = id;
         this.tamanio = tamanio;
         this.precioXnoche = precioXnoche;
         this.desayuno = desayuno;
         this.ocupada = ocupada;
+        this.hotel = hotel;
     }
 
     public Integer getId() {
@@ -69,5 +74,13 @@ public class Habitacion {
 
     public void setOcupada(Boolean ocupada) {
         this.ocupada = ocupada;
+    }
+
+    public Hotel getHotel() {
+        return hotel;
+    }
+
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
     }
 }
